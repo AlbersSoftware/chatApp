@@ -30,16 +30,21 @@ func main() {
 
 	r := newRoom()
 
+	// Serve static files from the "client" directory
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("client"))))
+
+	// Serve the chat.html file
 	http.Handle("/", &templateHandler{filename: "chat.html"})
+
+	// Serve the WebSocket handler
 	http.Handle("/room", r)
 
-	// get the room going
+	// Get the room going
 	go r.run()
 
-	// start the web server
+	// Start the web server
 	log.Println("Starting web server on", *addr)
-	if err := http.ListenAndServe("0.0.0.0:8080", nil); err != nil {
+	if err := http.ListenAndServe(*addr, nil); err != nil {
 		log.Fatal("ListenAndServe:", err)
 	}
-
 }

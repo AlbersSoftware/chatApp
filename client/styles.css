@@ -1,0 +1,94 @@
+
+/* styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+  
+  #chatbox {
+    max-width: 400px;
+    margin: 0 auto;
+    color: rgba(33, 218, 95, 0.7);
+  }
+  
+  input, textarea {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 80%;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+  }
+  
+  #messages {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .send-button-container {
+    position: relative;
+  }
+  .send-button {
+    position: relative; /* Added position: relative */
+    background-color: #4973ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font: 16px/24px Arial, sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+      box-shadow 0.4s ease,
+      background-color 0.4s ease,
+      color 0.4s ease;
+    box-shadow:
+      0 0 2px 0 rgba(73, 115, 255, .1),
+      0 0 4px 0 rgba(73, 115, 255, .2),
+      0 0 6px 0 rgba(73, 115, 255, .3),
+      0 0 8px 0 rgba(73, 115, 255, .4),
+      0 0 12px 0 rgba(73, 115, 255, .5),
+      0 0 18px 0 rgba(73, 115, 255, .6);
+  }
+  
+  .send-button:hover {
+    background-color: #ea3c;
+    box-shadow:
+      0 0 2px 0 rgba(238, 170, 51, 0.1),
+      0 0 4px 0 rgba(238, 170, 51, 0.2),
+      0 0 6px 0 rgba(238, 170, 51, 0.3),
+      0 0 8px 0 rgba(238, 170, 51, 0.4),
+      0 0 12px 0 rgba(238, 170, 51, 0.5),
+      0 0 18px 0 rgba(238, 170, 51, 0.6),
+      0 0 4px 0 rgba(238, 170, 51, 0.7);
+  }
+  
+  .send-button:before,
+  .send-button:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .send-button:before {
+    border-radius: 46%;
+    background-color: rgba(20, 20, 20, 0.2);
+    animation: animate 5s linear infinite;
+  }
+  
+  .send-button:after {
+    border-radius: 40%;
+    background-color: rgba(20, 20, 20, 0.5);
+    animation: animate 10s linear infinite;
+  }
